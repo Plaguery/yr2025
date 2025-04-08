@@ -25,7 +25,7 @@ class Recipe:
 def addIngred(ingred):
     ingredients.append(ingred)
 
-
+#gets meal ids from ingredients
 def findMeals():
     for i in ingredients:
         workingUrl = baseUrl + "filter.php?i=" + i
@@ -38,6 +38,7 @@ def findMeals():
             for meal in rText['meals']:
                 mealID.add(meal['idMeal'])
 
+#gets meal data from ids
 def getMealData():
     global responses
     responses = []
@@ -46,7 +47,9 @@ def getMealData():
         r = requests.get(workingUrl)
         responses.append(r.text)
 
-    print(responses[1])
+def getData():
+    findMeals()
+    getMealData()
 
 def parseMealData(i):
     r = responses[i]
@@ -64,13 +67,13 @@ def parseMealData(i):
     for i in range(20):
         num = str(i+1)
 
-        lf = "strIngredient" + num
+        lf = "strMeasure" + num
         currIngr = rText[lf]
         if not currIngr:
             break
         
         currIngr += " "
-        lf = "strMeasure" + num
+        lf = "strIngredient" + num
         currIngr += rText[lf]
         ingr.append(currIngr)
         print(currIngr)
@@ -78,9 +81,9 @@ def parseMealData(i):
     rec = Recipe(name, id, imgsrc, ingr, instr,vid)
     return rec
 
-findMeals()
-getMealData()
+def getTop(x):
+    for i in range(x):
+        recipes.append(parseMealData(i))
 
-rec = parseMealData(1)
-print(rec.name)
-print(rec.instructions)
+getData()
+getTop(5)
