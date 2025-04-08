@@ -2,6 +2,8 @@
 <html>
     <style>
         body{
+            padding:0;
+
             margin: 0;
             font-family: sans-serif;
             background-color: red;
@@ -16,6 +18,7 @@
             height: 100%;
             overflow-x: hidden;
             overflow-y: scroll;
+            top:0;
         }
 
         .sidebar input{
@@ -28,7 +31,7 @@
             width : 100%;
         }
         .sidebar table, tr, td{
-            margin-left: 8.5px;
+            margin-left: 0;
             text-align: center;
             border: 1px solid black;
             width: 100%;
@@ -39,8 +42,9 @@
             padding:0;
             width:50vw;
             height:100vh;
-            flex: auto;
             background-color: grey;
+            overflow:auto;
+            top:0;
         }
         .banner{
             text-align: center;
@@ -54,6 +58,22 @@
         div.scroll-containter img{
             padding: 0.5vh;
         }
+        .price{
+            background-color: aliceblue;
+            text-align: center;
+            overflow-x:hidden;
+            position:fixed;
+            margin-left: 70vw;
+            width: 30vw;
+            height: 50vh;   
+            top:0;
+        }
+        .price p{
+            margin:3px;
+        }
+        
+
+        
         
     </style>
     <body>
@@ -85,6 +105,13 @@
                 <img src="" width="5vw" height="5vh" id="img4">
                 <img src="" width="5vw" height="5vh" id="img5">
             </div>
+        </div>
+        <div class="price">
+            <h2>Insert food here</h2>
+            <p>some random stuff about the food sophia save me, realistically it shouldn't go off screen a a a a a a a a a a a a a a a a a a a a a a</p>
+        </div>
+        <div class="video">
+            <h1>Instructional Video on The Dish</h1>
         </div>
     </body>
     <script src="main.js"></script>
