@@ -3,22 +3,10 @@ import json
 
 baseUrl = "https://www.themealdb.com/api/json/v1/1/"
 workingUrl = ""
-ingredients = ["rice", "coconut"]
+ingredients = ["rice", "butter"]
 mealID = set()
 responses = []
 recipes = []
-
-
-class Recipe:
-
-
-    def __init__(self,name,id, imgsrc, ingredients, instructions, video):
-        self.name = name
-        self.id = id
-        self.imgsrc = imgsrc
-        self.ingredients = ingredients
-        self.instructions = instructions
-        self.video = video
 
 
 
@@ -77,14 +65,29 @@ def parseMealData(i):
         currIngr += rText[lf]
         ingr.append(currIngr)
         print(currIngr)
+    dic = {
+        "name": name,
+        "id": id,
+        "imgsrc": imgsrc,
+        "ingr":ingr,
+        "instr":instr,
+        "vid":vid
 
-    rec = Recipe(name, id, imgsrc, ingr, instr,vid)
-    return rec
+    }
+    return dic
 
 def getTop(x):
     for i in range(x):
         recipes.append(parseMealData(i))
 
+def jsonDump():
+    val = json.dumps(recipes)
+    f = open("recipe.json", "w")
+    f.write(val)
+    f.close()
+
+
 getData()
 getTop(5)
+jsonDump()
 #recipes are stored as Recipe objects in the recipes list 
