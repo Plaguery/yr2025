@@ -6,14 +6,14 @@
 
             margin: 0;
             font-family: sans-serif;
-            background-color: red;
+            background-color: rgba(0, 0, 0, 0.25);
         }
 
         .sidebar{
             margin: 0;
             padding: 0;
             width: 20vw;
-            background-color: white;
+            background-color: #1f1f1f;
             position: fixed;
             height: 100%;
             overflow-x: hidden;
@@ -25,23 +25,23 @@
 
         .sidebar input{
             display:block;
-            color:black;
+            color:rgba(50, 50, 93, 0.25);
             padding:0.5vw;
             text-decoration: none;
             text-align: center;
-            border: 1px solid black;
+            border: 0px;
             width : 100%;
-            background-color: grey;
+            background-color: rgb(57, 57, 57);
         }
         .sidebar table, tr, td{
             margin-left: 0;
             text-align: center;
-            border: 1px black;
+            border: 1px rgba(50, 50, 93, 0.25);
             width: 100%;
         }
         .sidebar button {
         align-items: center;
-        background-color: #fff;
+        background-color: #bb86fc;
         border-radius: 12px;
         box-shadow: transparent 0 0 0 3px,rgba(18, 18, 18, .1) 0 6px 20px;
         box-sizing: border-box;
@@ -65,7 +65,7 @@
         user-select: none;
         -webkit-user-select: none;
         touch-action: manipulation;
-        box-shadow: #121212 0 0 0 3px, transparent 0 0 0 0;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
         margin-bottom: 3px;
         }
 
@@ -76,7 +76,7 @@
             padding:0;
             width:50vw;
             height:100vh;
-            background-color: white;
+            background-color: rgba(50, 50, 93, 0.25);
             overflow:auto;
             top:0;
             box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
@@ -102,7 +102,7 @@
             width: 30vw;
             height: 50vh;   
             top:50vh;
-            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
             
         }
         .price p{
@@ -117,7 +117,7 @@
             width: 30vw;
             height: 50vh;
             top:0;
-            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
             
         }
         .video video{
@@ -128,7 +128,7 @@
     </style>
     <body>
         <div class ="sidebar">
-            <input type="text" name="ingredients" placeholder="ingredients">
+            <input type="text" name="ingredients" placeholder="ingredients" >
             <table id="ingredientsList">
                 <tr>
                     <td>
@@ -144,7 +144,7 @@
         </div>
         <div class="Recipe">
             <div class="banner"><h1>RECIPES</h1></div>
-            <p>
+            <p style="text-align: center;">
                  
                 placeholder text here for the recipe that we will scrape from the web
             </p>
@@ -158,7 +158,7 @@
         </div>
         <div class="price">
             <h2>Insert food here</h2>
-            <p>some random stuff about the food sophia save me, realistically it shouldn't go off screen a a a a a a a a a a a a a a a a a a a a a a</p>
+            <p style="text-align: center;">some random stuff about the food sophia save me, realistically it shouldn't go off screen a a a a a a a a a a a a a a a a a a a a a a</p>
         </div>
         <div class="video">
             <h3>Instructional Video on The Dish</h1>
