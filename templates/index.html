@@ -1,55 +1,75 @@
 <!DOCTYPE html>
 <html>
-    <style>
-        body{
-            padding:0;
+<style>
+    h1 {
+        color: #ffffff;
+    }
 
-            margin: 0;
-            font-family: sans-serif;
-            background-color: rgba(0, 0, 0, 0.25);
-        }
+    h2 {
+        color: #ffffff;
+    }
 
-        .sidebar{
-            margin: 0;
-            padding: 0;
-            width: 20vw;
-            background-color: #1f1f1f;
-            position: fixed;
-            height: 100%;
-            overflow-x: hidden;
-            overflow-y: scroll;
-            top:0;
-            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-            
-        }
+    h3 {
+        color: #ffffff;
+    }
 
-        .sidebar input{
-            display:block;
-            color:rgba(50, 50, 93, 0.25);
-            padding:0.5vw;
-            text-decoration: none;
-            text-align: center;
-            border: 0px;
-            width : 100%;
-            background-color: rgb(57, 57, 57);
-        }
-        .sidebar table, tr, td{
-            margin-left: 0;
-            text-align: center;
-            border: 1px rgba(50, 50, 93, 0.25);
-            width: 100%;
-        }
-        .sidebar button {
+    p {
+        color: #ffffff;
+    }
+
+    body {
+        padding: 0;
+
+        margin: 0;
+        font-family: sans-serif;
+        background-color: rgba(0, 0, 0, 0.25);
+    }
+
+    .sidebar {
+        margin: 0;
+        padding: 0;
+        width: 20vw;
+        background-color: #1f1f1f;
+        position: fixed;
+        height: 100%;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        top: 0;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+
+    }
+
+    .sidebar input {
+        display: block;
+        color: rgb(255, 255, 255);
+        padding: 0.5vw;
+        text-decoration: none;
+        text-align: center;
+        border: 0px;
+        width: 100%;
+        background-color: #bb86fce8;
+    }
+
+    .sidebar table,
+    tr,
+    td {
+        margin-left: 0;
+        text-align: center;
+        border: 1px rgba(50, 50, 93, 0.25);
+        width: 100%;
+    }
+
+    .sidebar button {
         align-items: center;
         background-color: #bb86fc;
         border-radius: 12px;
-        box-shadow: transparent 0 0 0 3px,rgba(18, 18, 18, .1) 0 6px 20px;
+        box-shadow: transparent 0 0 0 3px, rgba(18, 18, 18, .1) 0 6px 20px;
         box-sizing: border-box;
         color: #121212;
         cursor: pointer;
         display: inline-flex;
         flex: 1 1 auto;
-        font-family: Inter,sans-serif;
+        font-family: Inter, sans-serif;
         font-size: 1.2rem;
         font-weight: 700;
         justify-content: center;
@@ -59,7 +79,7 @@
         padding: 1rem 1.2rem;
         text-align: center;
         text-decoration: none;
-        transition: box-shadow .2s,-webkit-box-shadow .2s;
+        transition: box-shadow .2s, -webkit-box-shadow .2s;
         white-space: nowrap;
         border: 0;
         user-select: none;
@@ -67,106 +87,142 @@
         touch-action: manipulation;
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
         margin-bottom: 3px;
-        }
+    }
 
-            
-        .Recipe{
-            position:fixed;
-            margin-left:20vw;
-            padding:0;
-            width:50vw;
-            height:100vh;
-            background-color: rgba(50, 50, 93, 0.25);
-            overflow:auto;
-            top:0;
-            box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
-        }
-        .banner{
-            text-align: center;
-        }
-        div.scroll-container{
-            background-color: #333;
-            overflow:auto;
-            white-space: nowrap;
-            padding: 0.5vh;
-        }
-        div.scroll-containter img{
-            padding: 0.5vh;
-        }
-        .price{
-            background-color: white;
-            text-align: center;
-            overflow-x:hidden;
-            position:fixed;
-            margin-left: 70vw;
-            width: 30vw;
-            height: 50vh;   
-            top:50vh;
-            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-            
-        }
-        .price p{
-            margin:3px;
-        }
-        .video{
-            position:fixed;
-            background-color: white;
-            text-align: center;
-            overflow:hidden;
-            margin-left: 70vw;
-            width: 30vw;
-            height: 50vh;
-            top:0;
-            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-            
-        }
-        .video video{
-            border:1px black;
-        }
 
-        
-    </style>
-    <body>
-        <div class ="sidebar">
-            <input type="text" name="ingredients" placeholder="ingredients" id="inputBox">
-            <table id="ingredientsList">
-                <tr>
-                    <td>
-                        <button>place holder 1</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <button>place holder 2</button>
-                    </td>
-                </tr>
-            </table>
+    .Recipe {
+        position: fixed;
+        margin-left: 20vw;
+        padding: 0;
+        width: 50vw;
+        height: 100vh;
+        background-color: #252525;
+        overflow: auto;
+        top: 0;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+    }
+
+    .banner {
+        text-align: center;
+    }
+
+    div.scroll-container {
+        background-color: #bb86fc;
+        overflow: auto;
+        white-space: nowrap;
+        padding: 0.5vh;
+    }
+
+    div.scroll-container img {
+        padding: 0.5vh;
+    }
+
+    .price {
+        background-color: #1f1f1f;
+        text-align: center;
+        overflow-x: hidden;
+        position: fixed;
+        margin-left: 70vw;
+        width: 30vw;
+        height: 50vh;
+        top: 50vh;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+    }
+
+    .price p {
+        margin: 3px;
+    }
+
+    .video {
+        position: fixed;
+        background-color: #1f1f1f;
+        text-align: center;
+        overflow: hidden;
+        margin-left: 70vw;
+        width: 30vw;
+        height: 50vh;
+        top: 0;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+    }
+
+    .video video {
+        border: 1px black;
+    }
+
+    /* width */
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+        background: #bb86fc;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: #ae6bff;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+
+    ::placeholder {
+        color: rgb(255, 255, 255);
+        opacity: 0.7;
+    }
+</style>
+
+<body>
+    <div class="sidebar">
+        <input type="text" name="ingredients" placeholder="ingredients" id="inputBox">
+        <table id="ingredientsList">
+            <tr>
+                <td>
+                    <button>place holder 1</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button>place holder 2</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="Recipe">
+        <div class="banner">
+            <h1>RECIPES</h1>
         </div>
-        <div class="Recipe">
-            <div class="banner"><h1>RECIPES</h1></div>
-            <p style="text-align: center;">
-                 
-                placeholder text here for the recipe that we will scrape from the web
-            </p>
-            <div class="scroll-container">
-                <img src="" width="5vw" height="5vh" id="img1">
-                <img src="" width="5vw" height="5vh" id="img2">
-                <img src="" width="5vw" height="5vh" id="img3">
-                <img src="" width="5vw" height="5vh" id="img4">
-                <img src="" width="5vw" height="5vh" id="img5">
-            </div>
+        <p style="text-align: center;">
+
+            placeholder text here for the recipe that we will scrape from the web
+        </p>
+        <div class="scroll-container">
+            <img src="" width="5vw" height="5vh" id="img1">
+            <img src="" width="5vw" height="5vh" id="img2">
+            <img src="" width="5vw" height="5vh" id="img3">
+            <img src="" width="5vw" height="5vh" id="img4">
+            <img src="" width="5vw" height="5vh" id="img5">
         </div>
-        <div class="price">
-            <h2>Insert food here</h2>
-            <p style="text-align: center;">some random stuff about the food sophia save me, realistically it shouldn't go off screen a a a a a a a a a a a a a a a a a a a a a a</p>
-        </div>
-        <div class="video">
-            <h3>Instructional Video on The Dish</h1>
+    </div>
+    <div class="price">
+        <h2>Insert food here</h2>
+        <p style="text-align: center;">some random stuff about the food sophia save me, realistically it shouldn't go
+            off screen a a a a a a a a a a a a a a a a a a a a a a</p>
+            
+    </div>
+    <div class="video">
+        <h3>Instructional Video on The Dish</h3>
             <video width="80%" height="80%" controls>
                 <source src="" id="video">
                 The browser does not support the video tag
             </video>
-        </div>
-    </body>
-    <script src="main.js"></script>
+    </div>
+        
+</body>
+
 </html>
