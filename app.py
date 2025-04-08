@@ -4,10 +4,8 @@ import json
 baseUrl = "https://www.themealdb.com/api/json/v1/1/"
 workingUrl = ""
 ingredients = ["rice", "ap"]
+mealID = set()
 responses = []
-meals = set()
-
-
 
 def addIngred(ingred):
     ingredients.append(ingred)
@@ -21,12 +19,17 @@ def findMeals():
         if(r.text == "{\"meals\":null}"):
             print("meals not found")
         else:
-            print(r.text)
-            responses.append
             rText = json.loads(r.text)
             for meal in rText['meals']:
-                meals.add(meal['idMeal'])
-            
+                mealID.add(meal['idMeal'])
+
+def getMealData():
+    responses = []
+    for x in mealID:
+        workingUrl = baseUrl + "lookup.php?i=" + x
+        r = requests.get(workingUrl)
+        responses.append(r.text)
+
 
 findMeals()
-
+getMealData()
