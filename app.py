@@ -12,12 +12,11 @@ recipes = []
 class Recipe:
 
 
-    def __init__(self,name,id, imgsrc, ingredients, amounts, instructions, video):
+    def __init__(self,name,id, imgsrc, ingredients, instructions, video):
         self.name = name
         self.id = id
         self.imgsrc = imgsrc
         self.ingredients = ingredients
-        self.amounts = amounts
         self.instructions = instructions
         self.video = video
 
@@ -69,13 +68,14 @@ def parseMealData(i):
         currIngr = rText[lf]
         if not currIngr:
             break
-        ingr.append(currIngr)
-
+        
+        currIngr += " "
         lf = "strMeasure" + num
-        currMeasure = rText[lf]
-        ingrMeasure.append(currMeasure)
+        currIngr += rText[lf]
+        ingr.append(currIngr)
+        print(currIngr)
 
-    rec = Recipe(name, id, imgsrc, ingr, ingrMeasure, instr,vid)
+    rec = Recipe(name, id, imgsrc, ingr, instr,vid)
     return rec
 
 findMeals()
