@@ -1,3 +1,7 @@
+const obj = JSON.parse(recipe.JSON);
+
+let ingredientList = [];
+const input = document.getElementById('inputBox');
 
 var fName = "Argon"
 var lName = "Neon"
@@ -28,10 +32,21 @@ const saveData = (user) => {
     }
 
 
-    const jsonData = JSON.stringify(user)
+    const jsonData = JSON.stringify(user);
     //console.log(user)
     //console.log(jsonData)
     fs.writeFile("thing.json",jsonData,finished);
 }
 
-saveData(user)
+saveData(user);
+
+function addIngredient(){
+    if (!ingredientList.includes(input.value)){
+        ingredientList.push(input.value);
+        
+    }
+}
+
+function searchRecipe(){
+
+}
