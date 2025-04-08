@@ -2,6 +2,8 @@ const obj = JSON.parse(recipe.JSON);
 
 let ingredientList = [];
 const input = document.getElementById('inputBox');
+const sidebar = document.getElementById('sidebar');
+const ingredientsTable = document.getElementById('ingredientsTable');
 
 var fName = "Argon"
 var lName = "Neon"
@@ -40,11 +42,30 @@ const saveData = (user) => {
 
 saveData(user);
 
-function addIngredient(){
-    if (!ingredientList.includes(input.value)){
-        ingredientList.push(input.value);
-        
+input.addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        event.preventDefault(); 
+        addIngredient();
     }
+});
+
+function addIngredient(){
+    const ingredient = input.value.trim
+    if (ingredient && !ingredientList.includes(ingredient)) {
+        ingredientList.push(ingredient);
+        cell.textContent = ingredient;
+
+        cell.appendChild(deleteButton);
+        row.appendChild(cell);
+        ingredientsTable.appendChild(row);
+        input.value = '';
+
+
+    }
+}
+
+function removeIngredient(){
+    
 }
 
 function searchRecipe(){
